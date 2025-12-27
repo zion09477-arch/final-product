@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- CRITICAL FOR MOBILE: Add user-scalable=yes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Anointed's Graphix | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for hamburger icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="home">
+
+<header>
+  <div class="header-container">
+    <h1 class="logo">Anointed's Graphix</h1>
+    
+    <!-- Hamburger Menu Button (Mobile Only) -->
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+
+      <!-- Connect dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Connect <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+          <a href="https://wa.link/bvjusu" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://www.tiktok.com/@igeneelias" target="_blank">
+            <i class="fab fa-tiktok"></i> TikTok
+          </a>
+          <a href="mailto:igeneanointed11@gmail.com">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="home-content"> <!-- Changed from about-content to home-content -->
+  <div class="hero-text">
+    <h1>GRAPHIX ANOINTED TO WELCOME</h1>
+    <p class="tagline">
+      Welcome to <strong>Anointed's Graphix</strong> — a creative design studio
+      focused on delivering professional, meaningful, and eye-catching visuals.
+    </p>
+    
+    <div class="cta-buttons">
+      <a href="portfolio.html" class="btn btn-primary">View Our Work</a>
+      <a href="services.html" class="btn btn-secondary">Our Services</a>
+      <a href="https://wa.link/bvjusu" target="_blank" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> Start a Project
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- Add this JavaScript for mobile menu -->
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('show');
+    hamburger.innerHTML = nav.classList.contains('show') 
+      ? '<i class="fas fa-times"></i>' 
+      : '<i class="fas fa-bars"></i>';
+  });
+  
+  // Close dropdown when clicking outside (optional)
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.dropdown') && !event.target.closest('.dropbtn')) {
+      document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+        dropdown.style.display = 'none';
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
